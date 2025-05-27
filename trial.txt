@@ -1,1 +1,418 @@
 Helllo world
+
+Basic git command
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git init
+git status
+vi abc.txt
+git add abc.txt       # Add one file
+git add .               # Add all files
+git commit -m "Your commit message"
+git log
+git clone <repository-url>
+git push origin main      # Or master
+git pull origin main
+git branch new-branch
+git checkout new-branch
+git add .
+git commit -m "Changes in new-branch"
+git checkout main
+git merge new-branch
+git branch -d new-branch
+
+Basic Git command in gitschool( go to website gitschool)
+git commit
+git branch login
+git checkout login
+git checkout master
+git branch logout
+git commit
+git checkout login
+git commit
+git commit
+git commit
+git checkout logout
+git commit
+git commit
+git checkout master
+git merge login
+git merge logout
+
+==============================================================================
+
+Steps of Jenkins Installation
+⇒
+Step 1:-  Search on Google for Jenkins Download
+Step 2:- Then click on Jenkins 
+Step 3:- Click on the Download icon 
+Then scroll down the page 
+Step 4:- Select your compatible system and it will automatically download to the folder 
+Step 5:- Open that Jenkin.msi file and run it 
+Follow the screenshot to proceed further
+Click to test the port button
+
+Then click on Install 
+ 
+Click on finish
+
+ Complete the installation of Jenkins…! 
+
+To view the dashboard, go to  localhost:8080
+
+Step 6:- add the admin password given in the file and install the package they require 
+
+Click the save and continue 
+
+================================================================================== 
+
+Q2. Demonstrate Continuous Integration and development using Jenkins
+
+Step 1:- Create a repo on GitHub 
+  
+Step 2:- Create any HTML file and commit to the repo
+ 
+Step 3:- Go to Jenkins Dashboard, which is available on  localhost:8080
+ 
+Step 4:- Click on   New Items +
+Choose a freestyle project and give the name to the project also then click on okk
+
+Step 5:- click on git and then paste your repo URL and branch according to your repo 
+(eg. *\main) Then apply and click on save.
+
+Step 6:- Click on Build New
+
+Step 7:-  Go to Workspace, all the file are available in repo those present in the workspace  
+
+Step 8:- Click on your file to view the output
+
+===============================================================================
+
+Q3. Explore Docker commands for content management
+⇒
+Commands 
+docker –version
+
+docker images
+
+docker ps -a
+
+docker ps -l
+
+docker ps -q
+
+docker ps -aq
+
+docker run nginx
+ 
+docker run -d nginx
+
+docker stop nginx
+
+docker run -it ubuntu
+
+docker run -d -p 2000:80 nginx
+ 
+docker run --name helloworld -d -p 2001:80 nginx:late
+ 
+docker run --name progrank -d -p 2001:80 nginx:latest
+
+docker ps -a
+
+docker stop d8adb64e29d0
+ 
+
+
+=========================================================================
+
+Q4. Develop a simple containerized application using Docker
+⇒
+Steps to create a simple containerized application using Docker
+Step 1:- open a any simple project to deploy in the Docker
+Step 2:- Create a Dockerfile for add required  dependencies in that file 
+note :- create a Dockerfile without any extension
+
+# Use a base image with Java installed
+FROM openjdk:17-jdk-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the JAR file from the target directory
+COPY target/*.jar app.jar
+
+# Expose port (if required)
+EXPOSE 8080
+
+# Run the JAR file
+ENTRYPOINT ["java", "-jar", "app.jar"]
+
+Step 3:- build that file using the following commands
+mkdir -p target
+
+echo "This is a dummy jar file" > target/app.jar
+
+ren Dockerfile.txt Dockerfile
+
+docker build -t simple-java-maven-app 
+
+docker images
+docker tag simple-java-maven-app yourgithubname/simple-java-maven-app:latest
+docker images
+simple-java-maven-app> docker push yourgithubname/simple-java-maven-app:latest
+ 
+Step 5:- final Output
+
+
+====================================================================================
+
+Ansible Setup: 
+Install from Microsoft store ubuntu 22.04 
+Open it in pc 
+set username and password : bvimit bvimit 
+Check in CMD Ubuntu Running 
+ 
+Update System packages: 
+sudo apt update && sudo apt upgrade -y 
+ 
+ 
+Install ansible 
+sudo apt install ansible -y 
+ 
+ 
+Verify ansible version 
+Create ansible configuration directory as not present 
+Create inventory file in Configuration:  
+Test if ansible can communicate with localhost 
+ansible local -m ping 
+Ad Hoc Command: 
+Returns username: 
+ansible local -m shell -a "whoami" 
+List files in Directory: 
+ansible local -m shell -a "ls -la /home/$USER" 
+Create file  
+ansible local -m shell -a "echo 'Hello' > /tmp/hello.txt" 
+List files 
+ansible local -m shell -a "ls -l /tmp" 
+List file with specific name 
+ansible local -m shell -a "ls -l /tmp | grep hello" 
+Check system uptime 
+ansible local -m command -a "uptime" 
+Os version and details 
+ansible local -m command -a "cat /etc/os-release" 
+Install package: 
+ansible local -m apt -a "name=nginx state=present" -b 
+If error occurred then run this: 
+ansible local -m apt -a "name=nginx state=present" -b --ask-become-pass 
+To verify installation 
+ansible local -m shell -a "dpkg -l | grep nginx" 
+Delete package 
+ansible local -m apt -a "name=nginx state=absent" -b 
+Create User: 
+ansible local -m user -a "name=testuser state=present" -b 
+Check User Created 
+ansible local -m shell -a "cat /etc/passwd | grep testuser" 
+Delete User 
+Create a File 
+ansible local -m file -a "path=/tmp/myfile.txt state=touch" 
+Add Content to the File 
+ansible local -m shell -a "echo 'This is a first line.' > /tmp/myfile.txt" 
+Append Content to the File 
+ansible local -m shell -a "echo 'This is an additional line.' >> /tmp/myfile.txt" 
+Running Ad-hoc Ansible commands 
+• Dealing with a File-  
+Display the File’s Contents 
+ansible local -m command -a "cat /tmp/myfile.txt" 
+Remove the File 
+ansible local -m file -a "path=/tmp/myfile.txt state=absent" 
+Create Directory Verify delete 
+ansible local -m file -a "path=/tmp/mydir state=directory mode=0755"  
+ls -la /tmp | grep mydir  
+ansible local -m file -a "path=/tmp/mydir state=absent" 
+
+
+
+
+
+Docker
+
+docker version
+
+docker help
+
+docker images
+
+docker ps -a
+
+docker ps -l
+
+docker ps -aq
+
+docker run nginx
+
+Steps to build the image in Docker
+
+1. Create a Dockerfile in your project 
+
+give a necessary dependency 
+
+for example
+
+# Use a lightweight web server image
+FROM nginx:alpine
+
+# Copy your HTML files into the web server directory
+COPY . /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+2. rename it from .txt to only Dockerfile
+
+ren  DockerFile.txt dockerfile
+
+3. docker build -t pg-gallery . (your file name)
+
+4. docker image (check is it uploaded successfull)
+
+5.  docker tag pg-gallery:latest pralhad005/pg-gallery:latest (give the tag eg. latest)
+
+6.  docker images
+
+7. docker push pralhad005/pg-gallery:latest(push on docker hub using this cmd)
+
+8. Check the Repo is created on the Docker hub 
+
+9.docker ps -as
+
+10. docker images
+
+11.docker ps -aq
+
+12. docker run simple-java-maven-app
+
+docker run -d -p 2000:80 my_profile
+
+docker run -d -p 2011:81 pralhad005/pg-gallery:latest
+
+
+
+fact
+
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class Factorial {
+    public static void main(String[] args) {
+        try {
+            File file = new File("input.txt");
+            Scanner scanner = new Scanner(file);
+
+            if (scanner.hasNextInt()) {
+                int num = scanner.nextInt();
+
+                if (num < 0) {
+                    System.out.println("Factorial is not defined for negative numbers.");
+                } else {
+                    long factorial = 1;
+                    for (int i = 1; i <= num; i++) {
+                        factorial *= i;
+                    }
+                    System.out.println("The factorial of " + num + " is: " + factorial);
+                }
+
+            } else {
+                System.out.println("The input file does not contain a valid integer.");
+            }
+
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found. Please ensure 'input.txt' is in the correct location.");
+        }
+    }
+}
+
+
+
+
+test cases
+
+stages:
+    - build
+    - run
+
+before_script:
+    - apt-get update && apt-get install -y openjdk-17-jdk
+
+build:
+    stage: build
+    script:
+        - javac Factorial.java
+        - echo "5" > input.txt
+    artifacts:
+        paths:
+            - Factorial.class
+            - input.txt
+
+run:
+    stage: run
+    script:
+        - java Factorial
+    needs:
+        - build
+    only:
+        - main
+===============================================================================
+Ansible Playbook
+nginx -v
+cd admin
+mkdir ansible
+cd ansible
+vim firstplaybook.yml
+---
+- name: First Demo Ansible Playbook
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Print Hello World message
+      debug:
+        msg: "Hello, World!"
+
+ansible-playbook firstplaybook.yml
+cat firstplaybook.yml
+
+===============================================================================
+Ansible playbook in github
+
+ansible --version
+ansible local -m ping
+mkdir home
+cd home
+mkdir leo
+cd leo
+make repository in GitHub
+create file: inventory.ini and write below code
+[localhost]
+local ansible_connection=local
+create file: pulldemo.yml  and write below code
+---
+- name: First Full Demo Ansible Playbook
+  hosts: localhost
+  tasks:
+    - name: print hello world
+      debug:
+        msg: "Hello World..."
+
+    - name: print host name
+      debug:
+        var: ansible_hostname
+
+    - name: print Ubuntu version
+      debug:
+        var: ansible_distribution
+come to cmd and excute it 
+ansible-pull -d /home/leo/ansiblepullDemo -U https://github.com/Leo-0311/AnsiblePullDemo.git -i /home/leo/ansiblepullDemo/inventory.ini pulldemo.yml
+
+
+
